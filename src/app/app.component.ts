@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterOutlet} from '@angular/router';
 import {Child1Component} from '../child1/child1.component';
 import {Child2Component} from '../child2/child2.component';
+import {AboutusComponent} from '../aboutus/aboutus.component';
+import {ContactusComponent} from '../contactus/contactus.component';
+import {HomeComponent} from '../home/home.component';
 
 
 @Component({
   selector: 'app-mainbody',
   standalone: true,
-  imports: [RouterOutlet, Child1Component, Child2Component],
+  imports: [RouterOutlet, Child1Component, Child2Component, AboutusComponent, ContactusComponent, HomeComponent, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

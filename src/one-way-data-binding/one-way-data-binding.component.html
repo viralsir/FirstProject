@@ -1,0 +1,58 @@
+<p>one-way-data-binding works!</p>
+<h1> Ts to Html</h1>
+ <ul>
+      <li>
+             String Interpollution <br/>
+             <ul>
+                 <li>Student Name : {{studentname}} </li>
+                 <li>Student Course : {{studentcourse}}</li>
+                 <li>Student Fees :{{studentfees}}</li>
+                <li>Student Discount :{{studentdiscount}}</li>
+                <li>Student Final Fees : {{studentfees-studentdiscount}}</li>
+                 <li><input type="text" value="{{studentname}}" ></li>
+             </ul>
+
+      </li>
+       <li>
+              Property Binding <br/>
+             <ul>
+               <li>
+               <input type="button" value="normal"> <br/>
+               <input type="button" value="stringprollution" disabled="{{isDisabled}}"> <br/>
+               <input type="button" value="propertybinding" [disabled]="isDisabled"> <br/>
+               </li>
+               <li>
+                 <input [type]="type">
+               </li>
+               <li>
+                 <input type="text" [style]="style">
+               </li>
+             </ul>
+
+       </li>
+      <li>
+           diff of String interpollution and property binding
+           <ul>
+              <li [style]="style">
+                  Message :   {{msg}}
+              </li>
+               <li style="{{style}}" [innerHTML]="msg">
+
+               </li>
+           </ul>
+      </li>
+ </ul>
+<h1> Html to TS</h1>
+<ul>
+    <li>
+       Event Binding
+       <ul>
+          <li>
+            <input type="button" (click)="displaymsg('vimal')" value="click here" >
+            <input type="number" size="20" (keyup)="objectpasingfunction(discountinput)"  #discountinput>
+            <input type="button" (click)="calculateFees(400)" value="discount" >
+            <input type="button" (click)="objectpasingfunction(discountinput)" value="discount" >
+          </li>
+       </ul>
+    </li>
+</ul>

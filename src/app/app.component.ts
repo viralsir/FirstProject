@@ -5,12 +5,13 @@ import {Child2Component} from '../child2/child2.component';
 import {AboutusComponent} from '../aboutus/aboutus.component';
 import {ContactusComponent} from '../contactus/contactus.component';
 import {HomeComponent} from '../home/home.component';
+import {OneWayDataBindingComponent} from '../one-way-data-binding/one-way-data-binding.component';
 
 
 @Component({
   selector: 'app-mainbody',
   standalone: true,
-  imports: [RouterOutlet, Child1Component, Child2Component, AboutusComponent, ContactusComponent, HomeComponent, RouterLink],
+  imports: [RouterOutlet, Child1Component, Child2Component, AboutusComponent, ContactusComponent, HomeComponent,OneWayDataBindingComponent, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -20,8 +21,6 @@ export class AppComponent {
   phno:string="12232323";
   no1:number=-12;
   no2:number=4;
-
-
 
 
 }

@@ -1,0 +1,15 @@
+<p>two-way-data-binding works!</p>
+<form >
+  Employee Name : <input type="text" [(ngModel)]="EmployeeName" name="EmployeeName"> <br/>
+  Employee Salary : <input type="number" [(ngModel)]="EmployeeBasicSalary" name="EmployeeBasicSalary">
+  Employee Commission : <input type="number" [(ngModel)]="EmployeeCommission" name="EmployeeCommission">
+
+</form>
+
+<h1> Employee Details </h1>
+<ul>
+   <li> Employee Name : {{EmployeeName}}</li>
+   <li> Employee Salary :{{EmployeeBasicSalary}}</li>
+  <li> Employee Commission:{{EmployeeCommission}} %</li>
+   <li>Employee Final Salary :{{(this.EmployeeBasicSalary*this.EmployeeCommission)/100 + this.EmployeeBasicSalary}}</li>
+</ul>

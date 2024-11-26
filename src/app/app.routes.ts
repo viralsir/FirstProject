@@ -4,6 +4,7 @@ import {AboutusComponent} from '../aboutus/aboutus.component';
 import {ContactusComponent} from '../contactus/contactus.component';
 import {OneWayDataBindingComponent} from '../one-way-data-binding/one-way-data-binding.component';
 import {TwoWayDataBindingComponent} from '../two-way-data-binding/two-way-data-binding.component';
+import {ControlStatementComponent} from '../control-statement/control-statement.component';
 
 export const routes: Routes = [
   {path: 'aboutus', component:AboutusComponent },
@@ -11,5 +12,6 @@ export const routes: Routes = [
   {path:'contactus',component:ContactusComponent},
   {path:"oneway",component:OneWayDataBindingComponent},
   {path:"twoway",component:TwoWayDataBindingComponent},
+  {path:"controlstatement",component:ControlStatementComponent}
   //{path:'',component:},
 ];

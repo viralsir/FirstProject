@@ -1,0 +1,93 @@
+<p>control-statement works!</p>
+<!--@if (true){-->
+<!--   <div class="bg-primary">-->
+<!--        <span> True part </span>-->
+<!--   </div>-->
+<!--} @else {-->
+<!--    <div class="bg-danger">-->
+<!--      <span> false part</span>-->
+<!--    </div>-->
+<!--}-->
+<div class="row" >
+    <div class="col-6">
+      <h1> if </h1>
+      <input type="button" class="btn btn-outline-primary" value="show" (click)="Showdiv(true)" >
+      <input type="button" class="btn btn-outline-info" value="hide" (click)="Showdiv(false)" >
+
+      @if(isVisible){
+        <div class="bg-primary">
+          <span> Div is visible </span>
+        </div>
+      } @else {
+        <span> div is hide </span>
+      }
+
+      <h1>
+        <ul>
+          <li> Name : {{name}}</li>
+          <li> Maths : {{maths}}</li>
+          <li> Science:{{science}}</li>
+          <li> English :{{english}}</li>
+          @if(maths>=35 && science>=35 && english>=35){
+            <li style="color:green;"> You are Pass </li>
+            <li> Total : {{maths+science+english}}</li>
+            <li> Avg : {{(maths+science+english)/3}}</li>
+
+          } @else {
+            <li class="text-danger"> You are Fail </li>
+          }
+        </ul>
+      </h1>
+
+    </div>
+
+    <div class="col-6">
+      <ul>
+      @for(item of citylist;track $index){
+        <li> {{item}} </li>
+      }
+      </ul>
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th colspan="6"> Student Details </th>
+        </tr>
+        <tr>
+          <th>Sr.No</th><th>Name</th><th>Maths</th><th>Science</th><th>English</th> <th> Status</th>
+        </tr>
+        </thead>
+        <tbody>
+          @for(student of studentlist;track $index){
+            <tr>
+              <td>{{$index}}</td>
+              <td>{{student.name}}</td>
+              <td>{{student.maths}}</td>
+              <td>{{student.science}}</td>
+              <td>{{student.english}}</td>
+
+              @if(student.maths >=PassingMarks && student.science>=PassingMarks && student.english>=PassingMarks)
+              {
+                <td style="color:green"> Pass </td>
+              }
+              @else{
+                  <td style="color:red"> Fail </td>
+                }
+
+            </tr>
+          }
+        </tbody>
+      </table>
+
+    </div>
+
+
+
+
+
+
+
+</div>
+
+
+
+

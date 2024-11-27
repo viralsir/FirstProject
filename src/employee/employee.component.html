@@ -1,0 +1,160 @@
+<div class="row">
+
+  <div class="col-6">
+    <form >
+        <table class="table table-borderless">
+             <thead>
+             <tr>
+               <th colspan="2"> Employee Entry Form</th>
+             </tr>
+             </thead>
+            <tbody>
+               <tr>
+                 <td>
+                   Name :
+                 </td>
+                 <td>
+                   <input type="text" size="20" class="form-control"  #name>
+                 </td>
+               </tr>
+               <tr>
+                 <td>
+                   Phno :
+                 </td>
+                 <td>
+                   <input type="text" size="20" class="form-control" #phno>
+                 </td>
+               </tr>
+               <tr>
+                 <td>
+                   Salary :
+                 </td>
+                 <td>
+                   <input type="number" size="20" class="form-control" #salary>
+                 </td>
+               </tr>
+               <tr>
+                 <td colspan="2" class="text-center">
+                   <input type="button" class="btn btn-primary m-2" value="save" (click)="addEmployee(name,phno,salary)">
+                   <input type="reset" class="btn btn-info" value="Clear">
+                 </td>
+               </tr>
+            </tbody>
+        </table>
+
+    </form>
+
+
+  </div>
+
+  <div class="col-6">
+
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th colspan="3" class="text-center text-primary">
+               Student Details
+          </th>
+
+        </tr>
+        <tr>
+          <th> Name </th> <th>Phno</th> <th>Salary</th>
+        </tr>
+        </thead>
+        <tbody>
+          @for(emp of EmployeeList;track $index)
+          {
+               <tr>
+                  <td> {{emp.name}}</td>
+                   <td>{{emp.phno}}</td>
+                    <td>{{emp.salary}}</td>
+               </tr>
+          }
+        </tbody>
+      </table>
+
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-6">
+    <form  #EmployeeForm="ngForm" (ngSubmit)="addEmployeeTdf(EmployeeForm)">
+      <table class="table table-borderless">
+        <thead>
+        <tr>
+          <th colspan="2"> Employee Entry Form</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>
+            Name :
+          </td>
+          <td>
+            <input type="text" ngModel size="20" class="form-control"  name="name"  minlength="3">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Phno :
+          </td>
+          <td>
+            <input type="text" ngModel size="20" class="form-control"  name="phno" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Salary :
+          </td>
+          <td>
+            <input type="number" ngModel size="20" class="form-control"  name="salary" >
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-center">
+             <h1>valid : {{EmployeeForm.valid}}  , invalid : {{EmployeeForm.invalid}}</h1>
+
+            <input type="submit" class="btn btn-primary m-2" value="save"  [disabled]="EmployeeForm.invalid" >
+            <input type="reset" class="btn btn-info" value="Clear">
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+    </form>
+
+
+  </div>
+
+  <div class="col-6">
+
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th colspan="3" class="text-center text-primary">
+          Student Details
+        </th>
+
+      </tr>
+      <tr>
+        <th> Name </th> <th>Phno</th> <th>Salary</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for(emp of EmployeeList;track $index)
+        {
+          <tr>
+            <td> {{emp.name}}</td>
+            <td>{{emp.phno}}</td>
+            <td>{{emp.salary}}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+

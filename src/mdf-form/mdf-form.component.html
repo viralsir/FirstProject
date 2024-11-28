@@ -1,0 +1,55 @@
+<p>mdf-form works!</p>
+
+<div class="row">
+
+  <div class="col-6">
+    <form [formGroup]="employeeformgroup" (ngSubmit)="SaveEmployee()">
+      <table class="table table-borderless">
+        <thead>
+            <tr>
+              <th colspan="2"> Employee Entry Form</th>
+            </tr>
+            <tr>
+              <th> Id :</th>
+              <td><input class="form-control" placeholder="enter id" type="text" size="20" formControlName="id"> </td>
+            </tr>
+            <tr>
+              <th> Name : </th>
+              <td><input class="form-control" type="text" size="20" formControlName="name"></td>
+            </tr>
+            <tr>
+              <th> Salary :</th>
+              <td><input class="form-control" type="number" formControlName="salary"> </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="text-center">
+                <input type="submit" value="save" [disabled]="employeeformgroup.invalid"  class="btn btn-primary m-2 ">
+                <input type="reset" value="clear" class="btn btn-info">
+              </td>
+            </tr>
+        </thead>
+
+      </table>
+    </form>
+  </div>
+
+  <div class="col-6">
+      @for(employee of employeelist;track $index){
+
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"> {{employee.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">{{employee.salary}}</h6>
+
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+
+      }
+
+
+  </div>
+
+</div>
+

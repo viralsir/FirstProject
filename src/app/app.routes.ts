@@ -7,6 +7,8 @@ import {TwoWayDataBindingComponent} from '../two-way-data-binding/two-way-data-b
 import {ControlStatementComponent} from '../control-statement/control-statement.component';
 import {EmployeeComponent} from '../employee/employee.component';
 import {MdfFormComponent} from '../mdf-form/mdf-form.component';
+import {EmployeeEntryComponent} from '../employee-entry/employee-entry.component';
+import {EmployeeViewComponent} from '../employee-view/employee-view.component';
 
 export const routes: Routes = [
   {path: 'aboutus', component:AboutusComponent },
@@ -16,6 +18,8 @@ export const routes: Routes = [
   {path:"twoway",component:TwoWayDataBindingComponent},
   {path:"controlstatement",component:ControlStatementComponent},
   {path:"Employee",component:EmployeeComponent},
-  {path:"MDF",component:MdfFormComponent}
+  {path:"MDF",component:MdfFormComponent},
+  {path:"Entry",component:EmployeeEntryComponent},
+  {path:"View",component:EmployeeViewComponent}
   //{path:'',component:},
 ];

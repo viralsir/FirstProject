@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col">
+
+      <table class="table table-warning table-bordered">
+        <thead>
+         <tr>
+           <th colspan="3"> Employee List  </th>
+         </tr>
+          <tr>
+            <th>Id</th> <th>Name</th><th>Salary</th>
+          </tr>
+        </thead>
+        <tbody>
+           @for(employee of employeeservice.getEmployees();track  $index){
+              <tr>
+                   <td> {{employee.id}}</td>
+                    <td> {{employee.name}}</td>
+                    <td>{{employee.salary}}</td>
+              </tr>
+           }
+        </tbody>
+
+      </table>
+
+    </div>
+
+</div>

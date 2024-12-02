@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import {Component, inject, Inject} from '@angular/core';
 import {EmployeeService} from '../employee.service';
 
 @Component({
@@ -10,7 +10,7 @@ import {EmployeeService} from '../employee.service';
 })
 export class EmployeeViewComponent {
 
-  employeeservice:EmployeeService=Inject("EmployeeService");
+  employeeservice:EmployeeService=inject(EmployeeService);
 
 
 

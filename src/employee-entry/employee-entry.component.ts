@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {EmployeeService} from '../employee.service';
 import {EmployeeComponent} from '../employee/employee.component';
@@ -15,7 +15,7 @@ import {EmployeeComponent} from '../employee/employee.component';
 export class EmployeeEntryComponent
 {
 
-  employeservice:EmployeeService=Inject("EmployeeService");
+  employeservice:EmployeeService=inject(EmployeeService);
   //constructor(employeeservice:EmployeeService) {
  // }
 
@@ -27,10 +27,8 @@ export class EmployeeEntryComponent
 
 
   addEmployee() {
-       //this.EmployeeForm.value
 
-      this.employeservice.showmsg();
-   // this.employeservice.saveEmployee(this.EmployeeForm.value);
+      this.employeservice.saveEmployee(this.EmployeeForm.value);
       alert("Record has been saved");
       this.EmployeeForm.reset();
 

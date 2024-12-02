@@ -9,6 +9,7 @@ import {EmployeeComponent} from '../employee/employee.component';
 import {MdfFormComponent} from '../mdf-form/mdf-form.component';
 import {EmployeeEntryComponent} from '../employee-entry/employee-entry.component';
 import {EmployeeViewComponent} from '../employee-view/employee-view.component';
+import {ApiViewComponent} from '../api-view/api-view.component';
 
 export const routes: Routes = [
   {path: 'aboutus', component:AboutusComponent },
@@ -20,6 +21,7 @@ export const routes: Routes = [
   {path:"Employee",component:EmployeeComponent},
   {path:"MDF",component:MdfFormComponent},
   {path:"Entry",component:EmployeeEntryComponent},
-  {path:"View",component:EmployeeViewComponent}
+  {path:"View",component:EmployeeViewComponent},
+  {path:"getApi",component:ApiViewComponent}
   //{path:'',component:},
 ];
